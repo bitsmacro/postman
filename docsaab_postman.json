@@ -1,0 +1,1033 @@
+{
+	"info": {
+		"_postman_id": "1db7d8dd-370e-4129-bd1d-694ea7b99706",
+		"name": "DoctorSab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "DocSaab : Signup for new User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ABASD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Sagar\",\n    \"midName\":\"\",\n    \"lastName\":\"Duwal\",\n    \"contactNumber\": \"9849422744\",\n    \"email\": \"sagar@sagar.com\",\n\n    \"password\": \"sagar\",\n    \"roles\": [\"User\"]\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/v1/user/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"user",
+								"signup"
+							]
+						},
+						"description": "localhost:8080/v1/user/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "DocSaab : Get User details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/v1/user/ef31afe7-d1b5-465c-a0e7-774919dae094",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"user",
+								"ef31afe7-d1b5-465c-a0e7-774919dae094"
+							]
+						},
+						"description": "localhost:8080/v1/user/bdb2f1f6-3555-4ca6-ae24-08607af09071"
+					},
+					"response": []
+				},
+				{
+					"name": "DocSaab : Get list of users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users"
+							]
+						},
+						"description": "localhost:8080/v1/users"
+					},
+					"response": []
+				},
+				{
+					"name": "DocSaab : Get user profile ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/v1/user/me",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"user",
+								"me"
+							]
+						},
+						"description": "localhost:8080/v1/user/me"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notes",
+			"item": [
+				{
+					"name": "Doctor",
+					"item": [
+						{
+							"name": "DocSaab : Delete note for doctor with noteId",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/v1/note/doctor/28d08b38-6771-4234-ae0c-390954fc4fdf",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"doctor",
+										"28d08b38-6771-4234-ae0c-390954fc4fdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DocSaab : Get list of doctor notes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"49c24d4d-7a65-421a-8adb-1682f5bd315c\"\n}"
+								},
+								"url": {
+									"raw": "localhost:8080/v1/note/doctor",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"doctor"
+									]
+								},
+								"description": "localhost:8080/v1/notes"
+							},
+							"response": []
+						},
+						{
+							"name": "DocSaab :  Get detail of doctor notes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/v1/note/doctor/28d08b38-6771-4234-ae0c-390954fc4fdf",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"doctor",
+										"28d08b38-6771-4234-ae0c-390954fc4fdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DocSaab : Create Doctor Note",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sessionId\": \"4d7713c6-bb18-11eb-8529-0242ac130004\",\n    \"userId\": \"49c24d4d-7a65-421a-8adb-1682f5bd315c\",\n    \"doctorId\": \"8469623d-3c7b-4b4d-be3b-83fc87909e56\",\n    \"noteJson\": \"{\\\"note\\\":\\\"response 1\\\"}\"\n}"
+								},
+								"url": {
+									"raw": "localhost:8080/v1/note/doctor",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"doctor"
+									]
+								},
+								"description": "localhost:8080/v1/note"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "DocSaab : Get list of user notes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/v1/note/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"user"
+									]
+								},
+								"description": "localhost:8080/v1/notes"
+							},
+							"response": [
+								{
+									"name": "DocSaab : Get list of user notes",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/v1/note/user",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"note",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "x-access-token, Origin, Content-Type, Accept"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "385"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"181-mhU2jbtSIo7ef07Kijl3Jf2v99s\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 22 May 2021 20:41:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"noteResponse\": {\n        \"notes\": [\n            {\n                \"id\": \"2643deba-a33f-4946-bb73-0238ef7695b0\",\n                \"userId\": \"49c24d4d-7a65-421a-8adb-1682f5bd315c\",\n                \"oxygenReading\": \"98\",\n                \"feverReading\": \"98\",\n                \"bloodPressure\": \"98\",\n                \"pulseReading\": \"98\",\n                \"comments\": \"\",\n                \"recordedDate\": \"2021-05-22T16:25:24.890Z\",\n                \"deleted\": false,\n                \"flagged\": false,\n                \"createdAt\": \"2021-05-22T20:26:41.513Z\",\n                \"updatedAt\": \"2021-05-22T20:26:41.513Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "DocSaab : Create User Note",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oxygenReading\": \"98\",\n    \"feverReading\": \"98\",\n    \"bloodPressure\": \"98\",\n    \"pulseReading\": \"98\",\n    \"comments\": \"\",\n    \"recordedDate\": \"2021-05-22 16:25:24.89+00\"\n}"
+								},
+								"url": {
+									"raw": "localhost:8080/v1/note/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"user"
+									]
+								},
+								"description": "localhost:8080/v1/note"
+							},
+							"response": [
+								{
+									"name": "DocSaab : Create User Note",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oxygenReading\": \"98\",\n    \"feverReading\": \"98\",\n    \"bloodPressure\": \"98\",\n    \"pulseReading\": \"98\",\n    \"comments\": \"\",\n    \"recordedDate\": \"2021-05-22 16:25:24.89+00\"\n}"
+										},
+										"url": {
+											"raw": "localhost:8080/v1/note/user",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"note",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "x-access-token, Origin, Content-Type, Accept"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "382"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"17e-7MMeKL9+TtQCr7gtUQm47tqgJZA\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 22 May 2021 20:26:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"noteResponse\": {\n        \"note\": {\n            \"id\": \"2643deba-a33f-4946-bb73-0238ef7695b0\",\n            \"deleted\": false,\n            \"flagged\": false,\n            \"userId\": \"49c24d4d-7a65-421a-8adb-1682f5bd315c\",\n            \"oxygenReading\": \"98\",\n            \"feverReading\": \"98\",\n            \"bloodPressure\": \"98\",\n            \"pulseReading\": \"98\",\n            \"comments\": \"\",\n            \"recordedDate\": \"2021-05-22T16:25:24.890Z\",\n            \"updatedAt\": \"2021-05-22T20:26:41.513Z\",\n            \"createdAt\": \"2021-05-22T20:26:41.513Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "DocSaab : Delete note for user with noteId",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/v1/note/user/2643deba-a33f-4946-bb73-0238ef7695b0",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"user",
+										"2643deba-a33f-4946-bb73-0238ef7695b0"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "DocSaab : Delete note for user with noteId",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/v1/note/user/2643deba-a33f-4946-bb73-0238ef7695b0",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"note",
+												"user",
+												"2643deba-a33f-4946-bb73-0238ef7695b0"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "x-access-token, Origin, Content-Type, Accept"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10-oV4hJxRVSENxc/wX8+mA4/Pe4tA\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 22 May 2021 21:01:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "DocSaab :  Get detail of user notes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/v1/note/user/2643deba-a33f-4946-bb73-0238ef7695b0",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"note",
+										"user",
+										"2643deba-a33f-4946-bb73-0238ef7695b0"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "DocSaab :  Get detail of user notes",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/v1/note/user/2643deba-a33f-4946-bb73-0238ef7695b0",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"note",
+												"user",
+												"2643deba-a33f-4946-bb73-0238ef7695b0"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "x-access-token, Origin, Content-Type, Accept"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "382"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"17e-8hrS52LlNh+NIge5ybRy2CS0uO8\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 22 May 2021 21:02:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"noteResponse\": {\n        \"notes\": {\n            \"id\": \"2643deba-a33f-4946-bb73-0238ef7695b0\",\n            \"userId\": \"49c24d4d-7a65-421a-8adb-1682f5bd315c\",\n            \"oxygenReading\": \"98\",\n            \"feverReading\": \"98\",\n            \"bloodPressure\": \"98\",\n            \"pulseReading\": \"98\",\n            \"comments\": \"\",\n            \"recordedDate\": \"2021-05-22T16:25:24.890Z\",\n            \"deleted\": true,\n            \"flagged\": false,\n            \"createdAt\": \"2021-05-22T20:26:41.513Z\",\n            \"updatedAt\": \"2021-05-22T21:01:16.488Z\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "DocSaab : Create doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Doctor\",\n    \"midName\": \"\",\n    \"lastName\": \"User\",\n    \"contactNumber\": \"9849422742\",\n    \"email\": \"doctor@sagar.com\",\n    \"password\": \"doctoruser\",\n    \"roles\": [\n        \"Doctor\"\n    ],\n    \"nmc\": \"123ABC\",\n    \"hospital\": \"ABC\",\n    \"qualification\": \"ABC\",\n    \"speciality\": \"ABC\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/v1/doctor/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor",
+								"create"
+							]
+						},
+						"description": "localhost:8080/v1/doctor/create"
+					},
+					"response": []
+				},
+				{
+					"name": "DocSaab : Get doctor Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/v1/doctor/ef31afe7-d1b5-465c-a0e7-774919dae094",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor",
+								"ef31afe7-d1b5-465c-a0e7-774919dae094"
+							]
+						},
+						"description": "localhost:8080/v1/doctor/f499e4b4-69af-445b-8c7f-5a42817a863e"
+					},
+					"response": []
+				},
+				{
+					"name": "DocSaab : Get list of doctors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/doctors",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctors"
+							]
+						},
+						"description": "localhost:8080/v1/doctors"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DocSaab : Login API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sagar@sagar.com\",\n    \"password\": \"sagar\",\n    \"roles\": [\"User\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				},
+				"description": "localhost:8080/v1/login"
+			},
+			"response": [
+				{
+					"name": "DocSaab : Login API",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sagar@sagar.com\",\n    \"password\": \"sagar\",\n    \"roles\": [\"User\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "744"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e8-TcKI0/F8mCIBhTmlMhl5BdzdoSI\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 May 2021 19:38:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"loginResponse\": {\n        \"token\": {\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6IjQ5YzI0ZDRkLTdhNjUtNDIxYS04YWRiLTE2ODJmNWJkMzE1YyIsImNvbnRhY3ROdW1iZXIiOiI5ODQ5NDIyNzQ0IiwiZW1haWwiOiJzYWdhckBzYWdhci5jb20iLCJzdGF0dXMiOmZhbHNlfSwicm9sZSI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIxNzEyMzMwLCJleHAiOjE2MjE3MjQzMzB9.-Dx4PdVqzLhK8tL1OF49oYWlFHXBg8UNY9Ldk2ku7Zs\",\n            \"expires\": 1621724330\n        },\n        \"roles\": [\n            \"ROLE_USER\"\n        ],\n        \"user\": {\n            \"id\": \"49c24d4d-7a65-421a-8adb-1682f5bd315c\",\n            \"firstName\": \"Sagar\",\n            \"midName\": \"\",\n            \"lastName\": \"Duwal\",\n            \"username\": null,\n            \"contactNumber\": \"9849422744\",\n            \"email\": \"sagar@sagar.com\",\n            \"lastLogin\": null,\n            \"status\": false,\n            \"onlineStatus\": false,\n            \"createdAt\": \"2021-05-22T09:07:36.887Z\",\n            \"updatedAt\": \"2021-05-22T09:07:36.887Z\",\n            \"doctor\": null\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}
